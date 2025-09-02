@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-bg: #0b0c10;
+  --color-surface: #121319;
+  --color-text: #f5f7fa;
+  --color-muted: #a3a6b1;
+  --color-gold: #d4af37;
+  --color-purple: #5b3b8c;
+  --color-danger: #e04545;
+  --color-success: #28c76f;
+
+  --radius: 16px;
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.15);
+  --ring: 0 0 0 2px rgba(212, 175, 55, 0.6);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif;
+}
