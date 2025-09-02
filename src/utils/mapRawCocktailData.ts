@@ -7,12 +7,12 @@
  * you won’t need.
  */
 
-interface IIngredient {
+export interface IIngredient {
   ingredient: string;
   measure: string | null;
 }
 
-interface ICocktail {
+export interface ICocktail {
   id: string;
   name: string;
   tags: string[];

@@ -1,9 +1,11 @@
-import type { ReactElement } from "react"
+import { type ReactElement } from "react";
+
+import { Landing } from "../components/Landing";
 
 export const HomePage = (): ReactElement => {
   return (
-    <section>
-      <p>This is home page</p>
+    <section id="home-page">
+      <Landing />
     </section>
-  )
-}
+  );
+};
