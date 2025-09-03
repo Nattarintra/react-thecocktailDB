@@ -21,8 +21,12 @@ export const Landing = (): ReactElement => {
 
   return (
     <section>
-      <h1>Random Cocktail</h1>
-      <button onClick={loadCocktail}>Another round</button>
+      <article className="center-flex">
+        <h2>Discover a Random Cocktail</h2>
+        <button className="btn btn--primary" onClick={loadCocktail}>
+          Another round
+        </button>
+      </article>
 
       {cocktail ? (
         <CocktailCard item={cocktail} />

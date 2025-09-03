@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { Thumpnail } from "./Thumpnail";
 import type { ICocktail } from "../utils/mapRawCocktailData";
+import { Link } from "react-router";
 
 interface ICocktailCardProps {
   item: ICocktail;
@@ -9,12 +10,14 @@ interface ICocktailCardProps {
 export const CocktailCard = ({ item }: ICocktailCardProps): ReactElement => {
   const { thumbnail, name } = item;
   return (
-    <section>
+    <article className="card center-block">
       <Thumpnail url={thumbnail} alt={name} />
-      <div>
+      <div className="center-flex ">
         <p>{name}</p>
-        <button>see more</button>
+        <Link to="/ingredient" className="btn btn--ghost">
+          see more
+        </Link>
       </div>
-    </section>
+    </article>
   );
 };
