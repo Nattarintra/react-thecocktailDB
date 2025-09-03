@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactElement } from "react";
-import { fetchRandomCocktail } from "../api/cocktailApi";
+import { getRandomCocktail } from "../api/cocktailApi";
 import type { ICocktail } from "../utils/mapRawCocktailData";
 import { CocktailCard } from "./CocktailCard";
 
@@ -9,7 +9,7 @@ export const Landing = (): ReactElement => {
 
   const loadCocktail = () => {
     setIsLoading(true);
-    fetchRandomCocktail()
+    getRandomCocktail()
       .then(setCocktail)
       .finally(() => setIsLoading(false));
   };
