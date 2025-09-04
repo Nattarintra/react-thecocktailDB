@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 import type { ICocktail } from "../utils/mapRawCocktailData";
-import { Thumpnail } from "./Thumpnail";
+import { Thumbnail } from "./Thumbnail";
 import { Tags } from "./Tags";
-import { IngreThumpnail } from "./IngreThumpnail";
+import { IngreThumbnail } from "./IngreThumbnail";
 
 interface IInfoCardProps {
   info: ICocktail;
@@ -17,7 +17,7 @@ export const CocktailDetails = ({ info }: IInfoCardProps): ReactElement => {
       <div className="info__inner">
         <div className="left">
           <p className="center-text lare-text">{name}</p>
-          <Thumpnail url={thumbnail} alt={name} />
+          <Thumbnail url={thumbnail} alt={name} />
           <div className="center-flex">
             {tags &&
               tags.length > 0 &&
@@ -30,7 +30,7 @@ export const CocktailDetails = ({ info }: IInfoCardProps): ReactElement => {
           <div className="ingredient-wrapper">
             {ingredients.map((ingre) => (
               <div className="ingredient-card">
-                <IngreThumpnail name={ingre.ingredient} />
+                <IngreThumbnail name={ingre.ingredient} />
                 <div className="center-text">
                   <p>{ingre.ingredient}</p>
                   <p>{ingre.measure}</p>

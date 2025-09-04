@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { getRandomCocktail } from "../api/cocktailApi";
 import type { ICocktail } from "../utils/mapRawCocktailData";
 import { CocktailCard } from "./CocktailCard";
+import { Link } from "react-router-dom";
 
 export const Landing = (): ReactElement => {
   const [cocktail, setCocktail] = useState<ICocktail>();
@@ -26,6 +27,9 @@ export const Landing = (): ReactElement => {
         <button className="btn btn--primary" onClick={loadCocktail}>
           Another round
         </button>
+        <Link to="/search">
+          <button className="btn btn--search">Search</button>
+        </Link>
       </article>
 
       {cocktail ? (

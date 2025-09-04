@@ -74,6 +74,16 @@ body {
 .btn--ghost:hover {
   color: var(--color-gold);
 }
+.btn--search {
+  background: var(--color-purple);
+
+  font-weight: 700;
+  color: var(--color-gold);
+}
+.btn--search:hover {
+  background: linear-gradient(90deg, var(--color-purple), var(--color-gold));
+  color: white;
+}
 img {
   max-width: 100%;
   height: auto;

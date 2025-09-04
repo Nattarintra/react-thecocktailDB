@@ -1,12 +1,12 @@
 import type { ReactElement } from "react";
 import { getIngredientImage } from "../api/cocktailApi";
 
-interface IIngreThumpnailProps {
+interface IIngreThumbnailProps {
   name: string;
 }
-export const IngreThumpnail = ({
+export const IngreThumbnail = ({
   name,
-}: IIngreThumpnailProps): ReactElement => {
+}: IIngreThumbnailProps): ReactElement => {
   const imageUrl = getIngredientImage(name);
   return <img src={imageUrl} alt={name} />;
 };
