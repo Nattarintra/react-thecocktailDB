@@ -1,9 +1,9 @@
-import type { ReactElement } from "react"
+import type { ReactElement } from "react";
 
 export const FavoritesPage = (): ReactElement => {
   return (
-    <section>
+    <section id="favorites-page">
       <p>This is FavoritesPage</p>
     </section>
-  )
-}
+  );
+};

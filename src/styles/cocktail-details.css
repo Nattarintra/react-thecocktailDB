@@ -1,0 +1,35 @@
+.info__inner {
+  display: flex;
+}
+
+.left {
+  width: 35%;
+}
+.right {
+  width: 60%;
+}
+.ingredient-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.ingredient-card {
+  width: 25%;
+}
+.lare-text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.medium-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.instructions {
+  width: 50%;
+  padding-bottom: 20px;
+}
+
+.glass {
+  color: var(--color-gold);
+  font-size: 1.2rem;
+}

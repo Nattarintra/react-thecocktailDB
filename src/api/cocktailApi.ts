@@ -22,5 +22,5 @@ export const getCocktailById = async (id: string): Promise<ICocktail> => {
 };
 
 export const getIngredientImage = (name: string): string => {
-  return `https://www.thecocktaildb.com/images/ingredients/${name}-small.png`;
+  return `https://www.thecocktaildb.com/images/ingredients/${name}-medium.png`;
 };

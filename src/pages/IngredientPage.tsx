@@ -1,9 +1,9 @@
-import type { ReactElement } from "react"
+import type { ReactElement } from "react";
 
 export const IngredientPage = (): ReactElement => {
   return (
-    <section>
+    <section id="ingredient-page">
       <p>This is Ingredient page</p>
     </section>
-  )
-}
+  );
+};
