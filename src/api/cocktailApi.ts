@@ -24,3 +24,13 @@ export const getCocktailById = async (id: string): Promise<ICocktail> => {
 export const getIngredientImage = (name: string): string => {
   return `https://www.thecocktaildb.com/images/ingredients/${name}-medium.png`;
 };
+
+export const searchCocktailsByName = async (
+  query: string
+): Promise<ICocktail[]> => {
+  const result = await fetch(`${BASE_URL}/search.php?s=${query}`);
+  const data = await result.json();
+
+  const cocktailByNames = data.drinks ?? [];
+  return cocktailByNames.map((name: any) => mapRawCocktailData(name));
+};
