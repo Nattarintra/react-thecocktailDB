@@ -1,0 +1,7 @@
+.search-wrapper {
+  width: 30rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-gold);
+}

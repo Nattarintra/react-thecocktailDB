@@ -26,11 +26,11 @@ export const getIngredientImage = (name: string): string => {
 };
 
 export const searchCocktailsByName = async (
-  query: string
+  name: string
 ): Promise<ICocktail[]> => {
-  const result = await fetch(`${BASE_URL}/search.php?s=${query}`);
+  const result = await fetch(`${BASE_URL}/search.php?s=${name}`);
   const data = await result.json();
 
   const cocktailByNames = data.drinks ?? [];
-  return cocktailByNames.map((name: any) => mapRawCocktailData(name));
+  return cocktailByNames.map((cName: any) => mapRawCocktailData(cName));
 };
