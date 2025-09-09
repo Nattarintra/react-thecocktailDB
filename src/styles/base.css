@@ -83,9 +83,11 @@ a {
 .btn--ghost:hover {
   color: var(--color-gold);
 }
+
 .btn--search {
   background: var(--color-purple);
-
+  width: 7rem;
+  padding: 0.8rem;
   font-weight: 700;
   color: var(--color-gold);
 }
@@ -100,11 +102,10 @@ img {
 }
 
 .form {
-  display: flex;
-  gap: 1rem;
   margin: 12px 0 16px;
 }
 
 .form input {
-  padding: 6px;
+  width: 20rem;
+  padding: 12px;
 }

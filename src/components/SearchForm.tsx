@@ -12,22 +12,19 @@ export const SearchForm = ({
   onChange,
 }: ISearchProps): ReactElement => {
   return (
-    <form className="form" onSubmit={onSubmit}>
-      <div className="center-flex">
-        <label className="center-flex">
-          <span className="material-symbols-outlined">search</span>
-          <input
-            className="input"
-            name="search"
-            placeholder="Margarita"
-            value={query}
-            onChange={onChange}
-          />
-        </label>
-        <button className="btn btn--search" type="submit">
-          Search
-        </button>
-      </div>
+    <form className="form center-flex" onSubmit={onSubmit}>
+      <label className="center-flex">
+        <input
+          className="input"
+          name="search"
+          placeholder="Margarita"
+          value={query}
+          onChange={onChange}
+        />
+      </label>
+      <button className="btn btn--search" type="submit">
+        Search
+      </button>
     </form>
   );
 };

@@ -1,7 +1,11 @@
 .search-wrapper {
   width: 30rem;
+  min-height: 32rem;
   background: var(--color-surface);
   border: 1px solid rgba(212, 175, 55, 0.18);
   border-radius: var(--radius);
   box-shadow: var(--shadow-gold);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

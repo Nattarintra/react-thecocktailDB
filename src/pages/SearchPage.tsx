@@ -3,6 +3,7 @@ import { SearchForm } from "../components/SearchForm";
 import { searchCocktailsByName } from "../api/cocktailApi";
 import { Link, useSearchParams } from "react-router-dom";
 import type { ICocktail } from "../utils/mapRawCocktailData";
+import { Pagination } from "../components/Pagination";
 
 const PAGE_SIZE = 10;
 export const SearchPage = (): ReactElement => {
@@ -40,51 +41,71 @@ export const SearchPage = (): ReactElement => {
 
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
-  const items = results.slice(start, end);
+  const currentItems = results.slice(start, end);
 
   const handleOnPrevious = () =>
     setPage((previous) => Math.max(1, previous - 1));
   const handleOnNext = () =>
     setPage((previous) => Math.min(pageTotal, previous + 1));
+
+  const renderSearchInfo = () => {
+    const s = (searchParams.get("s") || "").trim();
+    if (isLoading) return null;
+
+    if (!s)
+      return <p className="center-text">Start to search your cocktail...</p>;
+
+    if (results.length === 0)
+      return <p className="center-text">No cocktails found for “{s}”.</p>;
+
+    return null;
+  };
+
+  const renderCurrentItems = () => {
+    return (
+      <ul>
+        {currentItems ? (
+          currentItems.map((item) => (
+            <Link to={`/cocktailinfo/${item.id}`} key={item.id} className=" ">
+              <li>
+                <h4 className="">{item.name}</h4>
+              </li>
+            </Link>
+          ))
+        ) : (
+          <p> Loading...</p>
+        )}
+      </ul>
+    );
+  };
+
+  const renderPagination = () => {
+    return (
+      results &&
+      results.length > 10 && (
+        <Pagination
+          prev={handleOnPrevious}
+          next={handleOnNext}
+          currentPage={page}
+          pageTotal={pageTotal}
+        />
+      )
+    );
+  };
+
   return (
     <section id="seatch-page" className="container">
-      <p>Search Cocktails</p>
+      <h2 className="center-text">Search Cocktails</h2>
       <SearchForm
         query={query}
         onSubmit={handleSubmit}
         onChange={handleChange}
       />
-      {!isLoading && results.length === 0 && searchParams.get("s")?.trim() && (
-        <p>No cocktails found for “{searchParams.get("s")}”.</p>
-      )}
+
       <div className="search-wrapper center-block">
-        <ul>
-          {items ? (
-            items.map((res) => (
-              <Link to={`/cocktailinfo/${res.id}`} key={res.id} className=" ">
-                <li>
-                  <h4 className="">{res.name}</h4>
-                </li>
-              </Link>
-            ))
-          ) : (
-            <p> Loading...</p>
-          )}
-        </ul>
-        <div className="pagination">
-          <span
-            className="material-symbols-outlined"
-            onClick={handleOnPrevious}
-          >
-            arrow_back_ios
-          </span>
-          <p>
-            {page} / {pageTotal}
-          </p>
-          <span className="material-symbols-outlined" onClick={handleOnNext}>
-            arrow_forward_ios
-          </span>
-        </div>
+        {renderSearchInfo()}
+        {renderCurrentItems()}
+        {renderPagination()}
       </div>
     </section>
   );

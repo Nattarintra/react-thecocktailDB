@@ -1,0 +1,18 @@
+.btn--pagination {
+  background-color: transparent;
+  border: none;
+  color: var(--color-gold);
+  cursor: pointer;
+}
+.btn--pagination .material-symbols-outlined {
+  font-size: 40px;
+  font-variation-settings: "FILL" 0, "opsz" 40;
+}
+.btn--pagination:hover .material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+
+.btn--pagination:disabled {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
