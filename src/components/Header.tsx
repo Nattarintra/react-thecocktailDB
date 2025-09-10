@@ -20,8 +20,8 @@ export const Header = (): ReactElement => {
           <NavLink className="link" to="/search">
             search
           </NavLink>
-          <NavLink className="link" to="/cocktail-info">
-            cocktail info
+          <NavLink className="link" to="/favorites">
+            favorites
           </NavLink>
         </nav>
       </div>

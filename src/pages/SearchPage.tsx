@@ -50,7 +50,7 @@ export const SearchPage = (): ReactElement => {
 
   const renderSearchInfo = () => {
     const s = (searchParams.get("s") || "").trim();
-    if (isLoading) return null;
+    if (isLoading) return <p className="center-text">Loading...</p>;
 
     if (!s)
       return <p className="center-text">Start to search your cocktail...</p>;
@@ -66,14 +66,14 @@ export const SearchPage = (): ReactElement => {
       <ul>
         {currentItems ? (
           currentItems.map((item) => (
-            <Link to={`/cocktailinfo/${item.id}`} key={item.id} className=" ">
+            <Link to={`/cocktailinfo/${item.id}`} key={item.id}>
               <li>
-                <h4 className="">{item.name}</h4>
+                <h4>{item.name}</h4>
               </li>
             </Link>
           ))
         ) : (
-          <p> Loading...</p>
+          <p className="center-text"> Loading...</p>
         )}
       </ul>
     );

@@ -1,0 +1,21 @@
+.favorite:hover {
+  cursor: pointer;
+  font-variation-settings: "FILL" 0;
+}
+.favorite.is-favorite {
+  font-variation-settings: "FILL" 1;
+}
+.favorite-card {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+}
+.favorite__inner {
+  display: flex;
+}
+.favorite-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 20rem;
+  gap: 1rem;
+}
