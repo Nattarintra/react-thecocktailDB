@@ -4,7 +4,7 @@ import { Landing } from "../components/Landing";
 
 export const HomePage = (): ReactElement => {
   return (
-    <section id="home-page">
+    <section id="home-page" className="container">
       <Landing />
     </section>
   );

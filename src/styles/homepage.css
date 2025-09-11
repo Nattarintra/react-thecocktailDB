@@ -1,0 +1,20 @@
+/* === Tablet (≤768px) === */
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 18px;
+  }
+  .card {
+    width: 70%;
+  }
+}
+
+/* === Mobile (≤425px) === */
+@media (max-width: 425px) {
+  .mt,
+  .mb {
+    margin: 0.83rem 0;
+  }
+  .card {
+    width: 100%;
+  }
+}

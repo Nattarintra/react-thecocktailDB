@@ -26,7 +26,7 @@ export const CocktailCard = ({ item }: ICocktailCardProps): ReactElement => {
     add(item);
   };
   return (
-    <article className="card center-block">
+    <div className="card center-block">
       <Thumbnail url={thumbnail} alt={name} />
       <div className="center-flex ">
         <p>{name}</p>
@@ -37,6 +37,6 @@ export const CocktailCard = ({ item }: ICocktailCardProps): ReactElement => {
           favorite
         </span>
       </div>
-    </article>
+    </div>
   );
 };
