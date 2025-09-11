@@ -43,6 +43,8 @@ a.brand {
   display: flex;
   gap: 14px;
   align-items: center;
+}
+.text-capitalize {
   text-transform: capitalize;
 }
 .link {
@@ -54,4 +56,26 @@ a.brand {
 }
 .active {
   text-decoration: underline;
+}
+
+/*===Mobile===*/
+
+@media (max-width: 425px) {
+  .header__inner {
+    align-items: self-start;
+  }
+
+  a.brand {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand {
+    gap: 5px;
+  }
+  h1.brand__title {
+    margin: 0;
+  }
+  .badge {
+    margin-top: 0;
+  }
 }

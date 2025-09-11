@@ -1,0 +1,64 @@
+/* Backdrop covers the screen */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: stretch; /* so the drawer can align to the side */
+  z-index: 1000;
+}
+
+/* Drawer panel slides from the right */
+.drawer {
+  margin-left: auto; /* stick to right */
+  width: min(90vw, 360px);
+  height: 100dvh;
+  background: var(--color-bg, #0f0f0f);
+  color: var(--color-fg, #fff);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(100%);
+  animation: slide-in 220ms ease-out forwards;
+}
+/* Reduce-motion friendly */
+@media (prefers-reduced-motion: reduce) {
+  .drawer {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Slide-in keyframes */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+/* Header + Close */
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+}
+
+/* Nav links */
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 12px;
+}
+
+.btn--menu {
+  border: none;
+  color: var(--color-gold);
+  background: var(--color-bg);
+}

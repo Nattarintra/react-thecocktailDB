@@ -64,7 +64,7 @@ a {
   cursor: pointer;
   border: none;
   border-radius: 999px;
-  padding: 10px 18px;
+  padding: 13px 18px;
   transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.2s ease;
 }
 .btn--primary {
@@ -87,7 +87,6 @@ a {
 .btn--search {
   background: var(--color-purple);
   width: 7rem;
-  padding: 0.8rem;
   font-weight: 700;
   color: var(--color-gold);
 }
@@ -105,7 +104,8 @@ img {
   margin: 12px 0 16px;
 }
 
-.form input {
+.form .input {
   width: 20rem;
   padding: 12px;
+  border-radius: var(--radius);
 }
