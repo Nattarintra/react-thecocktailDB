@@ -23,16 +23,20 @@ export const MenuMobile = ({ isOpen, onClose }: IMenuMobileProps) => {
   // Lock body scroll while open
   useEffect(() => {
     if (!isOpen) return;
-    const { overflow } = document.body.style;
+    const prevBody = document.body.style.overflow;
+    const prevHtml = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = overflow;
+      document.body.style.overflow = prevBody;
+      document.documentElement.style.overflow = prevHtml;
     };
   }, [isOpen]);
 
-  // Simple initial focus
   useEffect(() => {
-    if (isOpen) panelRef.current?.focus();
+    if (!isOpen) return;
+    const t = setTimeout(() => panelRef.current?.focus(), 200);
+    return () => clearTimeout(t);
   }, [isOpen]);
 
   // Don’t render in DOM when closed
