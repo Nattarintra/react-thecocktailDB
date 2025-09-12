@@ -16,3 +16,11 @@
   color: var(--color-muted);
   cursor: not-allowed;
 }
+
+/* === Mobile (≤425px) === */
+@media (max-width: 425px) {
+  .btn--pagination .material-symbols-outlined {
+    font-size: 24px;
+    font-variation-settings: "FILL" 0, "opsz" 24;
+  }
+}

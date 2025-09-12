@@ -53,7 +53,11 @@ export const SearchPage = (): ReactElement => {
     if (isLoading) return <p className="center-text">Loading...</p>;
 
     if (!s)
-      return <p className="center-text">Start to search your cocktail...</p>;
+      return (
+        <p className="center-text text-size">
+          Start to search your cocktail...
+        </p>
+      );
 
     if (results.length === 0)
       return <p className="center-text">No cocktails found for “{s}”.</p>;
@@ -63,19 +67,21 @@ export const SearchPage = (): ReactElement => {
 
   const renderCurrentItems = () => {
     return (
-      <ul>
+      <div className="search-list">
         {currentItems ? (
           currentItems.map((item) => (
-            <Link to={`/cocktailinfo/${item.id}`} key={item.id}>
-              <li>
-                <h4>{item.name}</h4>
-              </li>
+            <Link
+              to={`/cocktailinfo/${item.id}`}
+              key={item.id}
+              className="link"
+            >
+              {item.name}
             </Link>
           ))
         ) : (
           <p className="center-text"> Loading...</p>
         )}
-      </ul>
+      </div>
     );
   };
 

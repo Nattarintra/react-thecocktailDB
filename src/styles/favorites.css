@@ -19,3 +19,13 @@
   flex-basis: 20rem;
   gap: 1rem;
 }
+/* === Mobile (≤425px) === */
+@media (max-width: 425px) {
+  .favorite__inner.center-flex.text-size {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  .favorite__inner.center-flex.text-size .material-symbols-outlined {
+    font-size: 1rem;
+  }
+}

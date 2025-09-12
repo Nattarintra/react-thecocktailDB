@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root {
   --color-bg: #0b0c10;
   --color-surface: #121319;
@@ -108,4 +112,33 @@ img {
   width: 20rem;
   padding: 12px;
   border-radius: var(--radius);
+}
+
+.mt,
+.mb {
+  margin: 0.83rem 0;
+}
+
+figure img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.text-size {
+  font-size: 1rem;
+}
+/* === Mobile (≤425px) === */
+@media (max-width: 425px) {
+  .container {
+    width: 80vw;
+  }
+  .center-flex {
+    gap: 0.5rem;
+  }
+  .form .input {
+    width: 10rem;
+    padding: 7px;
+  }
+  .text-size {
+    font-size: 0.5rem;
+  }
 }
