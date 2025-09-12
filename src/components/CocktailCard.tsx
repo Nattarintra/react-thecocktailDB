@@ -7,9 +7,13 @@ import { useFavorites } from "../hooks/useFavorites";
 
 interface ICocktailCardProps {
   item: ICocktail;
+  isLoading?: boolean;
 }
 
-export const CocktailCard = ({ item }: ICocktailCardProps): ReactElement => {
+export const CocktailCard = ({
+  item,
+  isLoading,
+}: ICocktailCardProps): ReactElement => {
   const { id, thumbnail, name } = item;
 
   const { checkIfFavorite, add, remove } = useFavorites();
@@ -28,15 +32,16 @@ export const CocktailCard = ({ item }: ICocktailCardProps): ReactElement => {
   return (
     <div className="card center-block">
       <Thumbnail url={thumbnail} alt={name} />
-      <div className="center-flex ">
+      <div className="center-flex mt mb">
         <p>{name}</p>
-        <Link to={`/cocktailinfo/${id}`} className="btn btn--ghost">
+        <Link to={`/cocktailinfo/${id}`} className="btn--ghost">
           see more
         </Link>
         <span className={favClasses.join(" ")} onClick={handleOnFavoriteClick}>
           favorite
         </span>
       </div>
+      {isLoading && <p className="center-text">Loading...</p>}
     </div>
   );
 };

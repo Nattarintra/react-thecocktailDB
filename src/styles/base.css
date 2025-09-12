@@ -120,8 +120,8 @@ img {
 }
 
 figure img {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 }
 .text-size {
   font-size: 1rem;

@@ -8,22 +8,33 @@
 .favorite-card {
   display: flex;
   flex-direction: column;
-  width: 25rem;
+  width: 13.9rem;
 }
 .favorite__inner {
   display: flex;
 }
+.favorite__inner.center-flex.text-size {
+  padding: 8px;
+}
 .favorite-wrapper {
-  display: flex;
   flex-wrap: wrap;
   flex-basis: 20rem;
   gap: 1rem;
+}
+
+/* === Tablet (≤768px) === */
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 18px;
+  }
+  .favorite-card {
+    width: 20rem;
+  }
 }
 /* === Mobile (≤425px) === */
 @media (max-width: 425px) {
   .favorite__inner.center-flex.text-size {
     font-size: 0.8rem;
-    padding: 8px;
   }
   .favorite__inner.center-flex.text-size .material-symbols-outlined {
     font-size: 1rem;

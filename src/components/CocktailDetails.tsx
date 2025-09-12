@@ -16,7 +16,7 @@ export const CocktailDetails = ({ info }: IInfoCardProps): ReactElement => {
     <article className="info-wrapper">
       <div className="info__inner">
         <div className="left">
-          <p className="center-text lare-text">{name}</p>
+          <p className="center-text large-text">{name}</p>
           <Thumbnail url={thumbnail} alt={name} />
           <div className="center-flex">
             {tags &&
@@ -41,8 +41,8 @@ export const CocktailDetails = ({ info }: IInfoCardProps): ReactElement => {
         </div>
       </div>
       <div className="instructions">
-        <p className="medium-text">Instructions</p>
-        <p className="glass">Glass: {glass}</p>
+        <p className="medium-text mt mb">Instructions</p>
+        <p className="glass mt mb">Glass: {glass}</p>
         <p>{instructions}</p>
       </div>
     </article>

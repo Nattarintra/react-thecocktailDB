@@ -13,17 +13,14 @@ export const FavoritesPage = (): ReactElement => {
   return (
     <section id="favorites-page" className="container">
       <h2 className="center-text mb">My Favorites</h2>
-      <article className="favorite-wrapper ">
+      <article className="favorite-wrapper center-flex ">
         {favorites ? (
           favorites.map((item) => (
             <div key={item.id} className="card favorite-card">
               <Thumbnail url={item.thumbnail} alt={item.name} />
               <div className="favorite__inner center-flex text-size">
                 <p>{item.name}</p>
-                <Link
-                  to={`/cocktailinfo/${item.id}`}
-                  className="btn btn--ghost"
-                >
+                <Link to={`/cocktailinfo/${item.id}`} className="btn--ghost">
                   see more
                 </Link>
                 <span

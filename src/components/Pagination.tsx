@@ -24,7 +24,7 @@ export const Pagination = ({
         <span className="material-symbols-outlined">arrow_circle_left</span>
       </button>
 
-      <p>
+      <p className="page-size">
         {currentPage} / {pageTotal}
       </p>
 

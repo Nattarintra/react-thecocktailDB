@@ -36,11 +36,7 @@ export const Landing = (): ReactElement => {
         </div>
       </div>
 
-      {cocktail ? (
-        <CocktailCard item={cocktail} />
-      ) : (
-        isLoading && <p>Loading…</p>
-      )}
+      {cocktail && <CocktailCard item={cocktail} isLoading={isLoading} />}
     </article>
   );
 };
